@@ -1,0 +1,343 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    /* Zmiana fontu na bardziej nowoczesny i elegancki */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    /* Ciepłe, ultra-jasne tło zamiast sterylnej bieli */
+    background-color: #fdfbf7;
+    color: #4a3f35;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* --- NAWIGACJA --- */
+#main-nav {
+    display: flex;
+    padding: 15px 4%;
+    justify-content: space-between;
+    align-items: center;
+    /* Głęboki, elegancki brąz zamiast czystej szarości */
+    background-color: #2b221a;
+    color: #fdfbf7;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.hamburg {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.hamburg span {
+    background-color: #fdfbf7;
+    width: 30px;
+    height: 3px;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Mobilne menu overlay */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(43, 34, 26, 0.98);
+    margin: 0;
+    padding: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.nav-links li { margin: 20px 0; }
+
+.nav-links li a {
+    color: #fdfbf7;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #d4a373; /* Ciepły akcent cynamonowy */
+}
+
+/* Logika menu burgera */
+#menu-toggle:checked ~ #main-nav .nav-links { left: 0; }
+#menu-toggle:checked ~ #main-nav .hamburg span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+#menu-toggle:checked ~ #main-nav .hamburg span:nth-child(2) { opacity: 0; }
+#menu-toggle:checked ~ #main-nav .hamburg span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+#imgg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(50%); /* Lekko przyciemnione tło, by tekst lepiej czytał się w słońcu */
+}
+
+.hero-text h1 { 
+    font-size: 3rem; 
+    margin: 0; 
+    font-weight: 800;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
+}
+
+
+/* --- SEKCJA KAWY --- */
+.kawy_glowne {
+    padding: 80px 20px;
+    background-color: #f7f3ed; /* Przytulny, mleczno-beżowy odcień sekcji */
+    text-align: center;
+}
+
+.kawy_glowne h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2b221a;
+    position: relative;
+}
+
+/* Delikatna linia ozdobna pod napisem "Nasze Kawy" */
+.kawy_glowne h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4a373;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.kawa_wazne {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px; /* Zwiększony odstęp między kartami dla "oddechu" */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Układ pojedynczej karty kawy */
+.kawa_glowne {
+    background: white;
+    border-radius: 16px; /* Bardziej zaokrąglone, nowoczesne rogi */
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(43, 34, 26, 0.08); /* Miękki, naturalny cień */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Subtelny efekt uniesienia karty po najechaniu myszką */
+.kawa_glowne:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(43, 34, 26, 0.12);
+}
+
+.kawa_check {
+    display: none;
+}
+
+.kawa_label {
+    cursor: pointer;
+    display: block;
+    padding-bottom: 10px;
+}
+
+.kawa_label img {
+    width: 100%;
+    height: 240px; /* Nieco wyższe, ładniejsze kadrowanie zdjęć kaw */
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.kawa_glowne:hover .kawa_label img {
+    transform: scale(1.03); /* Delikatny zoom zdjęcia przy najechaniu na kartę */
+}
+
+.kawa_label h3 {
+    margin: 15px 0 5px 0;
+    font-size: 1.4rem;
+    color: #2b221a;
+}
+
+.wiecej {
+    display: inline-block;
+    padding: 6px 14px;
+    color: #d4a373;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border: 1px solid #e9dbcc;
+    border-radius: 20px;
+    margin-top: 5px;
+    transition: all 0.3s;
+}
+
+.kawa_label:hover .wiecej {
+    background-color: #d4a373;
+    color: white;
+    border-color: #d4a373;
+}
+
+/* Informacja o kawie (rozwijana) */
+.kawa_info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), padding 0.3s;
+    background: #3d3025; /* Dopasowany do całości ciemniejszy brąz */
+    color: #fdfbf7;
+    padding: 0 20px;
+}
+
+.kawa_info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.kawa_check:checked ~ .kawa_info {
+    max-height: 300px; /* Zwiększone, by bezpiecznie mieściły się nowe opisy */
+    padding: 20px 20px;
+}
+
+
+/* --- SEKCJA O NAS --- */
+.o-nas-section {
+    padding: 100px 10%;
+    background-color: #fff;
+    text-align: center;
+    line-height: 1.9;
+}
+
+.o-nas-content h2 {
+    font-size: 2.5rem;
+    color: #2b221a;
+    margin-bottom: 25px;
+}
+
+.o-nas-content p {
+    font-size: 1.1rem;
+    color: #5c4d41;
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* --- SEKCJA KONTAKT --- */
+.kontakt-section {
+    padding: 80px 20px;
+    background-color: #2b221a;
+    color: #fdfbf7;
+    text-align: center;
+}
+
+.kontakt-section h2 {
+    font-size: 2.3rem;
+    margin-bottom: 30px;
+    color: #fdfbf7;
+}
+
+.kontakt-section p {
+    margin: 10px 0;
+    font-size: 1.05rem;
+    color: #dfd5cb;
+}
+
+/* Wyróżnienie kluczowych informacji w kontakcie */
+.kontakt-section p:nth-of-type(1),
+.kontakt-section p:nth-of-type(4) {
+    font-weight: bold;
+    color: #d4a373;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+
+/* --- RESPONSYWNOŚĆ (Zachowane i usprawnione progi) --- */
+@media (min-width: 600px) {
+    .kawa_wazne {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .kawa_wazne {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .hamburg {
+        display: none;
+    }
+
+    .nav-links {
+        position: static;
+        flex-direction: row;
+        height: auto;
+        width: auto;
+        background-color: transparent;
+        left: 0;
+    }
+
+    .nav-links li { margin: 0 20px; }
+    
+    .nav-links li a { 
+        font-size: 1.05rem; 
+        font-weight: 500;
+    }
+
+    /* Efekt hover dla linków w menu na desktopie */
+    .nav-links li a:hover {
+        color: #d4a373;
+    }
+    
+    .hero-text h1 { font-size: 4.5rem; }
+}

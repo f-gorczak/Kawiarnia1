@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawiarnia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+    
+    <nav id="main-nav">
+        <div class="logo">
+            <img src="logo.jfif" alt="logo">
+        </div>
+        
+        <label for="menu-toggle" class="hamburg"> 
+            <span></span>
+            <span></span>
+            <span></span> 
+        </label> 
+
+        <ul class="nav-links">
+            <li><a href="#start">Start</a></li>
+            <li><a href="#kawy">Nasze kawy</a></li>
+            <li><a href="#o-nas">O nas</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-section tlo" id="start">
+        <img src="tlo.jfif" alt="kawa" id="imgg">
+        <div class="hero-text">
+            <h1>Wyjątkowe uczucie</h1>
+            <p>Najlepsza kawa w Polsce</p>
+        </div>
+    </header>
+
+    <section class="kawy_glowne" id="kawy">
+        <h2>Nasze Kawy</h2>
+        <div class="kawa_wazne">
+            
+            <!-- 1. Miejsce dawnego Espresso -> TERAZ CAPPUCCINO -->
+            <div class="kawa_glowne">
+                <input type="checkbox" id="kawa1" class="kawa_check">
+                <label for="kawa1" class="kawa_label">
+                    <img src="capuccino.jfif" alt="Cappuccino">
+                    <h3>Cappuccino</h3>
+                    <span class="wiecej">Kliknij po więcej +</span>
+                </label>
+                <div class="kawa_info">
+                    <p>Włoska klasyka w rzemieślniczym wydaniu. Idealny balans pomiędzy wyrazistym, podwójnym shotem espresso, słodyczą ciepłego mleka a kremową, napowietrzoną pianką, na której nasi bariści wyczarują dla Ciebie małe dzieło sztuki.</p>
+                </div>
+            </div>
+            
+            <!-- 2. Miejsce dawnego Latte -> TERAZ CZARNA -->
+            <div class="kawa_glowne">
+                <input type="checkbox" id="kawa2" class="kawa_check">
+                <label for="kawa2" class="kawa_label">
+                    <img src="czarna.jfif" alt="Czarna">
+                    <h3>Czarna</h3>
+                    <span class="wiecej">Kliknij po więcej +</span>
+                </label>
+                <div class="kawa_info">
+                    <p>Czysta esencja czarnych ziaren speciality, przedłużona gorącą wodą. Bez kompromisów i bez pośpiechu. Pozwala w pełni docenić naturalną, owocowo-kwiatową kwasowość i głęboki aromat świeżo mielonej kawy.</p>
+                </div>
+            </div>
+
+            <!-- 3. Miejsce dawnego Cappuccino -> TERAZ ESPRESSO -->
+            <div class="kawa_glowne">
+                <input type="checkbox" id="kawa3" class="kawa_check">
+                <label for="kawa3" class="kawa_label">
+                    <img src="espresso.jfif" alt="Espresso">
+                    <h3>Espresso</h3>
+                    <span class="wiecej">Kliknij po więcej +</span>
+                </label>
+                <div class="kawa_info">
+                    <p>Serce naszej kawiarni. Krótki, esencjonalny napar o gęstej, orzechowej cremie. Ukryliśmy w nim głębokie nuty ciemnej czekolady i dzikich jagód, które natychmiast postawią Cię na nogi.</p>
+                </div>
+            </div>
+
+            <!-- 4. Miejsce dawnej Czarnej -> TERAZ LATTE MACCHIATO -->
+            <div class="kawa_glowne">
+                <input type="checkbox" id="kawa4" class="kawa_check">
+                <label for="kawa4" class="kawa_label">
+                    <img src="kawalate.jfif" alt="Latte">
+                    <h3>Latte Macchiato</h3>
+                    <span class="wiecej">Kliknij po więcej +</span>
+                </label>
+                <div class="kawa_info">
+                    <p>Prawdziwa, trójwarstwowa poezja dla miłośników łagodnych smaków. Poduszka z gęstej, aksamitnej pianki mlecznej delikatnie otula porcję naszego klasycznego espresso. Idealna na niespieszne popołudnie.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="o-nas" class="o-nas-section">
+        <div class="o-nas-content">
+            <h2>Nasza Historia</h2>
+            <p>Wszystko zaczęło się od starego młynka i marzenia o kawiarni, w której czas zwalnia, a zapach świeżo palonych ziaren wita Cię już od progu. Nie chcieliśmy tworzyć kolejnej sieciówki – zależało nam na stworzeniu domowej atmosfery, inspirowanej porankami w małych, włoskich miasteczkach.</p>
+            <p>Dziś nasze miejsce to owoc pasji do rzemiosła. Dbamy o każdy detal: od selekcji ziaren speciality, przez idealnie aksamitne mleko, aż po relacje z Wami. Wierzymy, że dobra kawa to coś więcej niż kofeina – to chwila oddechu dla siebie i przestrzeń do rozmowy z bliskimi.</p>
+        </div>
+    </section>
+
+    <section id="kontakt" class="kontakt-section">
+        <h2>Kontakt</h2>
+        <p>Godziny otwarcia:</p>
+        <p>poniedziałek - piątek: 7 - 19</p>
+        <p>Sobota - niedziela : 9 - 22</p>
+        <p>ul. Zielona 18, Leszno</p>
+        <p>Tel: +48 123 456 789</p>
+    </section>
+    
+</body>
+</html>
